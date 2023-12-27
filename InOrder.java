@@ -4,6 +4,22 @@
  */
 public class InOrder {
 	public static void main (String[] args) {
-		//// Write your code here
+        int num1;
+		int num2 = 0;
+		int stop=0;
+		while (stop==0)
+		{
+		    num1 = (int)((Math.random() * 10));
+		    if (num1>num2)
+		    	System.out.println(num1);
+		    else stop=1;
+		    num2 = (int)((Math.random() * 10));
+            if (num2>num1)
+            	System.out.println(num2);
+            else stop=1;
+            
+
+	    }
+		
 	}
 }
