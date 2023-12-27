@@ -13,10 +13,7 @@ public class InOrder {
 		    if (num1>num2)
 		    	System.out.println(num1);
 		    else stop=1;
-		    num2 = (int)((Math.random() * 10));
-            if (num2>num1)
-            	System.out.println(num2);
-            else stop=1;
+		    num2=num1;
             
 
 	    }
