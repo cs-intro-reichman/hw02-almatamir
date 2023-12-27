@@ -4,6 +4,23 @@
  */
 public class Reverse {
 	public static void main (String[] args){
-		//// Put your code here
+		String s= args[0]; 
+		int n = s.length();
+		String news= "";
+		String savec= "";
+		int count=0;
+		for(int i=n-1;i>=0; i--)
+		{
+			count++;
+			news+= s.charAt(i);
+			if (count==n/2)
+				savec+= s.charAt(i);
+		}
+		System.out.println(news);
+		System.out.println("The middle character is "+ savec);
+
+
+
+
 	}
 }
