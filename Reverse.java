@@ -12,14 +12,10 @@ public class Reverse {
 		for(int i=n-1;i>=0; i--)
 		{
 			count++;
-			news+= s.charAt(i);
-			if (count==n/2)
-				savec+= s.charAt(i);	
-
-			
-		}
+			news+= s.charAt(i);	
+        }
 		System.out.println(news);
-		System.out.println("The middle character is "+ savec);
+		System.out.println("The middle character is "+ news.charAt(count/2));
 
 
 
