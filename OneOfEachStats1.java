@@ -6,10 +6,10 @@
  */
 public class OneOfEachStats1 {
 	public static void main (String[] args) {
-		int t = Integer.parseInt(args[0]);
+		double t = Integer.parseInt(args[0]);
 		int num = (int)(Math.random() * 10 + 1);
 		int countk=0;
-		int avarage=0; 
+		double avarage=0; 
 		boolean isgirl= true;
 		boolean isboy= true;
 		int stop=0;
@@ -18,39 +18,43 @@ public class OneOfEachStats1 {
 		int morek=0;
 		for (int i=0; i<t; i++)
 		{
-		while(stop==0)
-		{
-			if (num>5)
-			{
-				isgirl=false;
-			}
-			else 
-			{
-            
-                isboy=false;
+			while(stop==0)
+		    {
+		    	avarage++; // total num of children
+				if (num>5) // checks if its boy or girl
+				{
+					isgirl=false;
+				}
+				else 
+				{
+                	isboy=false;
              
-			}
-			countk++;
-			avarage++;
-			if (isboy==false && isgirl ==false)
-			{
-				stop=1;
-				if (countk==2)
-				{
-					twok++;
 				}
-				else if (countk==3)
+				countk++; // total num of children in this family 
+				if (isboy==false && isgirl ==false) // checks if there re at lest one bot and girl
 				{
-					threek++;
+					if (countk==2) 
+					{
+						twok++; // adding to the total of two kids in a family
+					}
+					else if (countk==3)
+					{
+						threek++; // adding to the total of 3 kids in a family
+					}
+					else if (countk>3)
+					{
+					   	morek++; // adding to the total of 4 or more kids in a family
+					}
+					stop=1; // finish this fanmily 
 				}
-				else morek++;
-				countk=0;
-			}
-			else num = (int)(Math.random() * 10 + 1);
-		}
+				else num = (int)(Math.random() * 10 + 1); // if there are not at least one boy and girl it gives a new random 
+		    }
+		    isboy=true;
+		    isgirl=true;
+		    countk=0; // reset to count number of kids in a new family 
+		    stop=0; // while to continue 
 	    }
 	    double k= avarage/t;
-	   
 	    System.out.println("Average: "+k+" children to get at least one of each gender.");
 	    System.out.println("Number of families with 2 children: "+ twok);
 	    System.out.println("Number of families with 3 children: "+ threek);
