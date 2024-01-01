@@ -10,11 +10,7 @@ import java.util.Random;
 public class OneOfEachStats {
 	public static void main (String[] args) {
 		// Gets the two command-line arguments
-		int t = Integer.parseInt(args[0]);
-		int seed = Integer.parseInt(args[1]);
 		// Initailizes a random numbers generator with the given seed value
-        Random generator = new Random(seed);  
-		
 		//// In the previous version of this program, you used a statement like:
 		//// double rnd = Math.random();
 		//// Where "rnd" is the variable that stores the generated random value.
@@ -25,20 +21,23 @@ public class OneOfEachStats {
 		//// randomization will be based on the given seed.
 		//// This is the only change that you have to do in the program.
 
-		double num = generator.nextDouble();
+        int t = Integer.parseInt(args[0]);
+		int seed = Integer.parseInt(args[1]);
+        Random generator = new Random(seed);  
 		int countk=0;
 		double avarage=0; 
 		boolean isgirl= true;
 		boolean isboy= true;
-		int stop=0;
 		int twok=0;
 		int threek=0;
 		int morek=0;
 		for (int i=0; i<t; i++)
 		{
-			while(stop==0)
+
+		    countk=0; // reset to count number of kids in a new family 
+			while(isboy==true || isgirl ==true)
 		    {
-		    	avarage++; // total num of children
+		    	double num = generator.nextDouble(); // if there are not at least one boy and girl it gives a new random 
 				if (num>=0.5) // checks if its boy or girl
 				{
 					isgirl=false;
@@ -48,44 +47,44 @@ public class OneOfEachStats {
                 	isboy=false;
              
 				}
-				countk++; // total num of children in this family 
-				if (isboy==false && isgirl ==false) // checks if there re at lest one bot and girl
-				{
-					if (countk==2) 
-					{
-						twok++; // adding to the total of two kids in a family
-					}
-					else if (countk==3)
-					{
-						threek++; // adding to the total of 3 kids in a family
-					}
-					else if (countk>3)
-					{
-					   	morek++; // adding to the total of 4 or more kids in a family
-					}
-					stop=1; // finish this fanmily 
-				}
-				else num = generator.nextDouble(); // if there are not at least one boy and girl it gives a new random 
-		    }
-		    isboy=true;
+				countk++; // total num of children in this family;
+				System.out.println(countk);
+			}
+			isboy=true;
 		    isgirl=true;
-		    countk=0; // reset to count number of kids in a new family 
-		    stop=0; // while to continue 
+			avarage+=countk; // total num of children
+			System.out.println(avarage);
+			if (countk==2) 
+				{
+					twok++; // adding to the total of two kids in a family
+				}
+			else if (countk==3)
+				{
+					threek++; // adding to the total of 3 kids in a family
+				}
+			else if (countk>3)
+		    	{
+				   	morek++; // adding to the total of 4 or more kids in a family
+				}
+				 
+		     
 	    }
-	    double k= avarage/t;
-	    System.out.println("Average: "+k+" children to get at least one of each gender.");
+	    double total= avarage/t;
+	    System.out.println("Average: "+total+" children to get at least one of each gender.");
 	    System.out.println("Number of families with 2 children: "+ twok);
 	    System.out.println("Number of families with 3 children: "+ threek);
 	    System.out.println("Number of families with 4 or more children: "+ morek);
-	    if (twok>threek && twok> morek)
+	    if (twok>=threek && twok>= morek)
 	    {
           System.out.println("The most common number of children is 2.");
 	    }
-	    else if (threek> morek&& threek>morek)
+	    else if (threek>=morek&& threek>=morek)
 	    {
 	    	System.out.println("The most common number of children is 3.");
 	    }
 	    else System.out.println("The most common number of children is 4 or more.");
 	}
+
 }
+
 
