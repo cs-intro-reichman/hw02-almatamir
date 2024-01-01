@@ -39,7 +39,7 @@ public class OneOfEachStats {
 			while(stop==0)
 		    {
 		    	avarage++; // total num of children
-				if (num>0.5) // checks if its boy or girl
+				if (num>=0.5) // checks if its boy or girl
 				{
 					isgirl=false;
 				}
