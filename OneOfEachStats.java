@@ -65,7 +65,7 @@ public class OneOfEachStats {
 					}
 					stop=1; // finish this fanmily 
 				}
-				else num = (int)(Math.random() * 10 + 1); // if there are not at least one boy and girl it gives a new random 
+				else num = generator.nextDouble(); // if there are not at least one boy and girl it gives a new random 
 		    }
 		    isboy=true;
 		    isgirl=true;
