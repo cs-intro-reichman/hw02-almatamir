@@ -48,12 +48,10 @@ public class OneOfEachStats {
              
 				}
 				countk++; // total num of children in this family;
-				System.out.println(countk);
 			}
 			isboy=true;
 		    isgirl=true;
 			avarage+=countk; // total num of children
-			System.out.println(avarage);
 			if (countk==2) 
 				{
 					twok++; // adding to the total of two kids in a family
