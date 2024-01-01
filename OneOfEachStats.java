@@ -39,7 +39,7 @@ public class OneOfEachStats {
 			while(stop==0)
 		    {
 		    	avarage++; // total num of children
-				if (num>(0.5)) // checks if its boy or girl
+				if (num>0.5) // checks if its boy or girl
 				{
 					isgirl=false;
 				}
@@ -86,7 +86,6 @@ public class OneOfEachStats {
 	    	System.out.println("The most common number of children is 3.");
 	    }
 	    else System.out.println("The most common number of children is 4 or more.");
-
-		    
 	}
 }
+

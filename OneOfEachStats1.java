@@ -7,7 +7,7 @@
 public class OneOfEachStats1 {
 	public static void main (String[] args) {
 		double t = Integer.parseInt(args[0]);
-		int num = (int)(Math.random() * 10 + 1);
+		double num = (double)(Math.random());
 		int countk=0;
 		double avarage=0; 
 		boolean isgirl= true;
@@ -21,7 +21,7 @@ public class OneOfEachStats1 {
 			while(stop==0)
 		    {
 		    	avarage++; // total num of children
-				if (num>5) // checks if its boy or girl
+				if (num>0.5) // checks if its boy or girl
 				{
 					isgirl=false;
 				}
@@ -47,7 +47,7 @@ public class OneOfEachStats1 {
 					}
 					stop=1; // finish this fanmily 
 				}
-				else num = (int)(Math.random() * 10 + 1); // if there are not at least one boy and girl it gives a new random 
+				else num = (double)(Math.random()); // if there are not at least one boy and girl it gives a new random 
 		    }
 		    isboy=true;
 		    isgirl=true;
