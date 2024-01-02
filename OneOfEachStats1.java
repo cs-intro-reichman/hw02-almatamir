@@ -6,22 +6,20 @@
  */
 public class OneOfEachStats1 {
 	public static void main (String[] args) {
-		double t = Integer.parseInt(args[0]);
-		double num = (double)(Math.random());
-		int countk=0;
-		double avarage=0; 
-		boolean isgirl= true;
-		boolean isboy= true;
-		int stop=0;
-		int twok=0;
-		int threek=0;
-		int morek=0;
-		for (int i=0; i<t; i++)
+		int t = Integer.parseInt(args[0]);
+		double num = Integer(Math.random());
+		int countk = 0;
+		double sumkids = 0; 
+		boolean isgirl = true;
+		boolean isboy = true;
+		int twok = 0;
+		int threek = 0;
+		int morek = 0;
+		for (int i = 0; i < t; i++)
 		{
-			while(stop==0)
+			while(isboy == true || isgirl == true)
 		    {
-		    	avarage++; // total num of children
-				if (num>0.5) // checks if its boy or girl
+				if (num >= 0.5) // checks if its boy or girl
 				{
 					isgirl=false;
 				}
@@ -30,32 +28,31 @@ public class OneOfEachStats1 {
                 	isboy=false;
              
 				}
-				countk++; // total num of children in this family 
-				if (isboy==false && isgirl ==false) // checks if there re at lest one bot and girl
+				countk++; // total num of children in this family
+				if (isboy == false && isgirl ==false)
 				{
-					if (countk==2) 
+				    if (countk == 2) 
 					{
 						twok++; // adding to the total of two kids in a family
 					}
-					else if (countk==3)
+				    else if (countk == 3)
 					{
 						threek++; // adding to the total of 3 kids in a family
 					}
-					else if (countk>3)
+				    else if (countk > 3)
 					{
 					   	morek++; // adding to the total of 4 or more kids in a family
-					}
-					stop=1; // finish this fanmily 
+					} 
+					sumkids+=countk;
 				}
-				else num = (double)(Math.random()); // if there are not at least one boy and girl it gives a new random 
+			    num = Integer(Math.random()); // if there are not at least one boy and girl it gives a new random 
 		    }
-		    isboy=true;
-		    isgirl=true;
-		    countk=0; // reset to count number of kids in a new family 
-		    stop=0; // while to continue 
+		    countk = 0; // reset to count number of kids in a new family 
+	        isboy = true;
+		    isgirl = true;
 	    }
-	    double k= avarage/t;
-	    System.out.println("Average: "+k+" children to get at least one of each gender.");
+	    double avarage= sumkids/t;
+	    System.out.println("Average: "+avarage+" children to get at least one of each gender.");
 	    System.out.println("Number of families with 2 children: "+ twok);
 	    System.out.println("Number of families with 3 children: "+ threek);
 	    System.out.println("Number of families with 4 or more children: "+ morek);

@@ -4,11 +4,11 @@
 public class DamkaBoard {
 	public static void main(String[] args) {
 		int num = Integer.parseInt(args[0]);
-		for (int i=0; i<num; i++)
+		for (int i = 0; i < num; i++)
 		    {
-		    	if (i%2==0)
+		    	if (i % 2 == 0)
 		    	{
-		    		 for (int j=0; j<num; j++)
+		    		 for (int j = 0; j < num; j++)
 		        	{
 			          System.out.print("* ");
 			        }
@@ -16,7 +16,7 @@ public class DamkaBoard {
 			 
 		    	else
 		    	{
-                    for (int j=0; j<num; j++)
+                    for (int j = 0; j < num; j++)
 		        	{
 			          System.out.print(" *");
 			        }

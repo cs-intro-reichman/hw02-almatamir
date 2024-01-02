@@ -18,7 +18,7 @@ public class Perfect {
 
 			
 		}
-		if (sum!=num)
+		if (sum != num)
 		{
 				System.out.println(num+ " is not a perfect number");
 		}
